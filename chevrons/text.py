@@ -30,6 +30,7 @@ class Chevrons:
         ]
 
     def __remove_break_quotes(self, original_string: str) -> str:
+
         return original_string.replace("\'", "").replace("\"", "")
 
     def apply(self) -> str:
@@ -38,6 +39,6 @@ class Chevrons:
                 self.original_string = self.original_string.replace(
                     quoted_string, self.__chevronize(quoted_string)
                 )
-
         self.original_string = self.__remove_break_quotes(self.original_string)
+
         return self.original_string
