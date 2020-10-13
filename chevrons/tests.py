@@ -48,6 +48,28 @@ class TestChevronize(unittest.TestCase):
             "These are «first» and «second» quotes", Chevrons(original_string).apply()
         )
 
+    def test_unquote_regular_string_with_single_quote_unpaired(self):
+        """
+        Testing on regular string with single
+        substring with single quotes around
+
+        """
+        original_string = "This is 'quoted"
+        self.assertEquals(
+            "This is quoted", Chevrons(original_string).apply()
+        )
+
+    def test_unquote_regular_string_with_double_quote_unpaired(self):
+        """
+        Testing on regular string with single
+        substring with single quotes around
+
+        """
+        original_string = 'This is "quoted'
+        self.assertEquals(
+            "This is quoted", Chevrons(original_string).apply()
+        )
+
 
 if __name__ == '__main__':
     unittest.main()
