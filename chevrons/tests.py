@@ -99,7 +99,7 @@ class TestChevronize(unittest.TestCase):
         Testing on regular string with a
         substring with single quotes around
         and another single substring with unpaired single
-        quote
+        quotei
 
         """
         original_string = "This is 'quoted' and 'unpaired"
