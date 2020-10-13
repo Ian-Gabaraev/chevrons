@@ -11,7 +11,7 @@ class TestChevronize(unittest.TestCase):
 
         """
         original_string = 'This is "quoted"'
-        self.assertEquals(
+        self.assertEqual(
             'This is «quoted»', Chevrons(original_string).apply()
         )
 
@@ -22,7 +22,7 @@ class TestChevronize(unittest.TestCase):
 
         """
         original_string = 'These are "first" and "second" quotes'
-        self.assertEquals(
+        self.assertEqual(
             'These are «first» and «second» quotes', Chevrons(original_string).apply()
         )
 
@@ -33,7 +33,7 @@ class TestChevronize(unittest.TestCase):
 
         """
         original_string = "This is 'quoted'"
-        self.assertEquals(
+        self.assertEqual(
             "This is «quoted»", Chevrons(original_string).apply()
         )
 
@@ -44,7 +44,7 @@ class TestChevronize(unittest.TestCase):
 
         """
         original_string = "These are 'first' and 'second' quotes"
-        self.assertEquals(
+        self.assertEqual(
             "These are «first» and «second» quotes", Chevrons(original_string).apply()
         )
 
@@ -55,7 +55,7 @@ class TestChevronize(unittest.TestCase):
 
         """
         original_string = "This is 'quoted"
-        self.assertEquals(
+        self.assertEqual(
             "This is quoted", Chevrons(original_string).apply()
         )
 
@@ -66,7 +66,7 @@ class TestChevronize(unittest.TestCase):
 
         """
         original_string = 'This is "quoted'
-        self.assertEquals(
+        self.assertEqual(
             "This is quoted", Chevrons(original_string).apply()
         )
 
