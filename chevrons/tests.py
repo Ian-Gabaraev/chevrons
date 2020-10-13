@@ -4,7 +4,7 @@ from .text import Chevrons
 
 class TestChevronize(unittest.TestCase):
 
-    def test_chevronize_regular_string(self):
+    def test_chevronize_regular_quoted_string(self):
         """
         Testing on regular string with single
         substring with double quotes around
@@ -13,6 +13,17 @@ class TestChevronize(unittest.TestCase):
         original_string = 'This is "quoted"'
         self.assertEqual(
             'This is «quoted»', Chevrons(original_string).apply()
+        )
+
+    def test_simple_string(self):
+        """
+        Testing on simple string without
+        quotes
+
+        """
+        original_string = 'No quotes here'
+        self.assertEqual(
+            'No quotes here', Chevrons(original_string).apply()
         )
 
     def test_chevronize_two_quotes(self):
