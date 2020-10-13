@@ -34,6 +34,7 @@ class Chevrons:
         return original_string.replace("\'", "").replace("\"", "")
 
     def apply(self) -> str:
+
         if self.__is_applicable(self.original_string):
             for quoted_string in self.__get_matches(self.original_string):
                 self.original_string = self.original_string.replace(
