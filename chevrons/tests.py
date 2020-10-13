@@ -70,6 +70,32 @@ class TestChevronize(unittest.TestCase):
             "This is quoted", Chevrons(original_string).apply()
         )
 
+    def test_unquote_and_chevronize_mixed_string(self):
+        """
+        Testing on regular string with single
+        substring with double quotes around
+        and single substring with unpaired double
+        quote
+
+        """
+        original_string = 'This is "quoted" and "unpaired'
+        self.assertEqual(
+            'This is «quoted» and unpaired', Chevrons(original_string).apply()
+        )
+
+    def test_unquote_and_chevronize_another_mixed_string(self):
+        """
+        Testing on regular string with single
+        substring with single quotes around
+        and single substring with unpaired single
+        quote
+
+        """
+        original_string = "This is 'quoted' and 'unpaired"
+        self.assertEqual(
+            'This is «quoted» and unpaired', Chevrons(original_string).apply()
+        )
+
 
 if __name__ == '__main__':
     unittest.main()
