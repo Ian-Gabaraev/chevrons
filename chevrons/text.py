@@ -3,7 +3,7 @@ import re
 
 class Chevrons:
     def __init__(self, original_string):
-        self.pattern = re.compile('\"[^\"]+\"')
+        self.pattern = re.compile('[\"|\'][^\"\']+[\"|\']')
         self.original_string = original_string
 
     def __is_applicable(self, original_string: str) -> bool:
